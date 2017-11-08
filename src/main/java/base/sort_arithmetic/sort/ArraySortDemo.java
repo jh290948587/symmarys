@@ -3,7 +3,7 @@ package base.sort_arithmetic.sort;
 
 
 
-public class ArrayDemo {
+public class ArraySortDemo {
 	public static void main(String[] args) {
 		int[] arr = {3,5,6,4,7,11,9,10};
 //		printArr(arr);
