@@ -9,6 +9,10 @@ public class Solution {
         System.out.println(s);
     }
 
+    public void test(){
+
+    }
+
 
     public static String countAndSay(int n){
         if(n <= 0){
