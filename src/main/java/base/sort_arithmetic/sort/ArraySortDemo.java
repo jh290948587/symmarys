@@ -11,12 +11,12 @@ public class ArraySortDemo {
 //		printArr(arr);
 //		int[] arr = {1,5,8,11,15,17,22,24};
 //		int index = binarySearch(arr, 3);
-//		selectSort(arr);
+		selectSort(arr);
 //		System.out.println();
-		quickSort(arr,0,arr.length - 1);
-	    for(int i: arr){
-            System.out.print(i+ ",");
-        }
+//		quickSort(arr,0,arr.length - 1);
+//	    for(int i: arr){
+//            System.out.print(i+ ",");
+//        }
 	}
 
 	/**
