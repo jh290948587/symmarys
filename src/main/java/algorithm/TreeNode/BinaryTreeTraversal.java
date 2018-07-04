@@ -12,6 +12,7 @@ public class BinaryTreeTraversal {
      * @author yhh
      */
     private class Node{
+
         private Node left;
         private Node right;
         private int data;

@@ -5,13 +5,17 @@ package base.sort_arithmetic.sort;
  */
 public class SelectAndBubble {
     public static void main(String[] args) {
-		/*int[] arr = {3,5,6,1,7,11,9,2};
-		printArr(arr);
-		bubbleSort(arr);
-		printArr(arr);*/
-        int[] arr = {1,5,8,11,15,17,22,24};
-        int index = binarySearch(arr, 3);
-        System.out.println(index);
+		int[] arr = {3,5,6,1,7,11,9,2};
+//		printArr(arr);
+        bubbleSort(arr);
+		for(int i :arr){
+            System.out.println(i);
+        }
+
+//		printArr(arr);
+//        int[] arr = {1,5,8,11,15,17,22,24};
+//        int index = binarySearch(arr, 3);
+//        System.out.println(index);
 
     }
     /*
@@ -40,7 +44,7 @@ public class SelectAndBubble {
      * 数组冒泡排序
      */
     private static void bubbleSort(int[] arr){
-        for(int i = 0 ; i < arr.length ;i++){
+        for(int i = 0 ; i < arr.length - 1 ;i++){
             for(int j = 0 ; j < arr.length - i - 1 ; j++){
                 if( arr[j] > arr[j+1])
                     swap(arr,j,j+1);
@@ -51,7 +55,7 @@ public class SelectAndBubble {
      * 数组的选择排序
      */
     private static void selectSort(int[] arr){
-        for(int i = 0 ; i < arr.length ; i++){
+        for(int i = 0 ; i < arr.length - 1 ; i++){
             for(int j = i+1 ; j < arr.length ; j++){
                 if(arr[i] > arr[j])
                     swap(arr,i,j);

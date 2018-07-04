@@ -14,11 +14,12 @@ public class ReverseListNode {
         n2.next = n3;
         n3.next = n4;
 
-        ListNode listNode = iterativeReverse(n1);
-//        ListNode listNode2 = recursiveReverse(n1);
-        System.out.println(listNode.next.val);
-        System.out.println(listNode.next.next.val);
-        System.out.println(listNode.next.next.next.val);
+//        ListNode listNode = iterativeReverse(n1);
+        ListNode listNode2 = recursiveReverse(n1);
+        while(listNode2 != null){
+            System.out.println(listNode2.val);
+            listNode2 = listNode2.next;
+        }
     }
 
 
@@ -39,9 +40,9 @@ public class ReverseListNode {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode curr = head.next;
-        ListNode newHead = recursiveReverse(curr);
-        curr.next = head;
+        ListNode next = head.next;
+        ListNode newHead = recursiveReverse(next);
+        next.next = head;
         head.next = null;
         return newHead;
     }

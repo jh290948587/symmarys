@@ -13,11 +13,25 @@ public class ArraySortDemo {
 //		int index = binarySearch(arr, 3);
 //		selectSort(arr);
 //		System.out.println();
-		quickSort(arr,0,arr.length - 1);
+//		quickSort(arr,0,arr.length - 1);
+        insertSort(arr);
 	    for(int i: arr){
             System.out.print(i+ ",");
         }
 	}
+
+	public static void insertSort(int[] arr){
+        int tmp;
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = i; j > 0; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    tmp = arr[j - 1];
+                    arr[j - 1] = arr[j];
+                    arr[j] = tmp;
+                }
+            }
+        }
+    }
 
 	/**
 	 * 快速排序
