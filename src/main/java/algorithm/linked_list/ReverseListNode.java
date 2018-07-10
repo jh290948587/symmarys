@@ -14,11 +14,12 @@ public class ReverseListNode {
         n2.next = n3;
         n3.next = n4;
 
-        ListNode listNode = iterativeReverse(n1);
-//        ListNode listNode2 = recursiveReverse(n1);
-        System.out.println(listNode.next.val);
-        System.out.println(listNode.next.next.val);
-        System.out.println(listNode.next.next.next.val);
+//        ListNode listNode = iterativeReverse(n1);
+        ListNode listNode = recursiveReverse(n1);
+        while(listNode != null ){
+            System.out.println(listNode.val);
+            listNode = listNode.next;
+        }
     }
 
 
@@ -36,6 +37,7 @@ public class ReverseListNode {
 
     // recursive method
     public static ListNode recursiveReverse(ListNode head) {
+//        head == null是为了判断如果第一次的head就是空，直接返回。head.next == null是为了判断当前节点是不是最后一个，这是递归结束的标志
         if (head == null || head.next == null) {
             return head;
         }
