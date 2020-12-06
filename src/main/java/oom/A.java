@@ -6,5 +6,8 @@ package oom;
 public class A {
     public void method(String name) {
         // do nothing
+        String a = "";
+
+
     }
 }
