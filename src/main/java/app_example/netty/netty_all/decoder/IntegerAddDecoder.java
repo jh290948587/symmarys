@@ -35,12 +35,16 @@ public class IntegerAddDecoder
                 first = in.readInt();
                 //第一步解析成功，
                 // 进入第二步，并且设置“读指针断点”为当前的读取位置
+//                checkpoint方法两个作用：
+//                1、设置state属性的值，更新一下当前的状态。
+//                2、设置“读断点指针”，指针存档，一旦可读数据不够，就会还原到checkpoint的独断点指针处
                 checkpoint(Status.PARSE_2);
                 break;
             case PARSE_2:
                 second = in.readInt();
                 Integer sum = first + second;
                 out.add(sum);
+                System.out.println("相加的结果：" + sum);
                 checkpoint(Status.PARSE_1);
                 break;
             default:

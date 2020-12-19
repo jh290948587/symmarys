@@ -42,6 +42,7 @@ public class StringReplayDecoder
                 //第二步，从装饰器ByteBuf 中读取内容数组
                 in.readBytes(inBytes, 0, length);
                 out.add(new String(inBytes, "UTF-8"));
+                System.out.println("第二步读取的Content：" + new String(inBytes, "UTF-8"));
                 // 第二步解析成功，
                 // 进入第一步，读取下一个字符串的长度
                 // 并且设置“读指针断点”为当前的读取位置

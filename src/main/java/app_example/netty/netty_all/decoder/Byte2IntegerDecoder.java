@@ -15,7 +15,9 @@ public class Byte2IntegerDecoder extends ByteToMessageDecoder {
     @Override
     public void decode(ChannelHandlerContext ctx, ByteBuf in,
                        List<Object> out) {
+//        while (in.readableBytes() >= 5) {
         while (in.readableBytes() >= 4) {
+            System.out.println(in.hashCode());
             int i = in.readInt();
             System.out.println("解码出一个整数: " + i);
             out.add(i);

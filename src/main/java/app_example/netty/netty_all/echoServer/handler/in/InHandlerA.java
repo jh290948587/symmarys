@@ -1,5 +1,4 @@
-package app_example.netty.netty_all.echoServer;
-
+package app_example.netty.netty_all.echoServer.handler.in;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelFuture;
@@ -7,12 +6,9 @@ import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
 @ChannelHandler.Sharable
-public class NettyEchoServerHandler extends ChannelInboundHandlerAdapter {
-    public static final NettyEchoServerHandler INSTANCE = new NettyEchoServerHandler();
+public class InHandlerA extends ChannelInboundHandlerAdapter {
+    public static final InHandlerA INSTANCE = new InHandlerA();
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
@@ -28,9 +24,10 @@ public class NettyEchoServerHandler extends ChannelInboundHandlerAdapter {
         System.out.println("写回前，msg.refCnt:" + ((ByteBuf) msg).refCnt());
 //        将数据直接原封不动的写回客户端，因为上面调用的是getBytes，可以直接使用msg写回。
 //        如果调用的是readBytes，则不可直接使用msg写回
-        ChannelFuture f = ctx.writeAndFlush(msg);
-        f.addListener((ChannelFuture futureListener) -> {
-            System.out.println("写回后，msg.refCnt:" + ((ByteBuf) msg).refCnt());
-        });
+//        ChannelFuture f = ctx.writeAndFlush(msg);
+        super.channelRead(ctx, msg);
+//        f.addListener((ChannelFuture futureListener) -> {
+//            System.out.println("写回后，msg.refCnt:" + ((ByteBuf) msg).refCnt());
+//        });
     }
 }
